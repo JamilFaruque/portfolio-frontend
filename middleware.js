@@ -2,11 +2,14 @@ import { NextResponse } from 'next/server'
 
 // This function can be marked `async` if using `await` inside
 export default function middleware(request) {
-    console.log('hello from middleware')
-    // return NextResponse.redirect(new URL('/home', request.url))
+    console.log('Middleware executed!');
+    
+    // Add a header to check if middleware is work
+    // return NextResponse.redirect(new URL('/about', request.url));
+
 }
 
 // See "Matching Paths" below to learn more
 export const config = {
-    matcher: '/about/:path*',
-}
+    matcher: ['/', '/about'],  // Runs only for the home page
+};
