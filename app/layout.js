@@ -1,7 +1,7 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Rakibul Islam | Full Stack Developer',
+  title: 'Omar Faruk Jamil | Full Stack Developer',
   description: 'Full Stack Developer specializing in Laravel, React, Next.js, and AI-driven development. Based in Dhaka, Bangladesh.',
   icons: {
     icon: '/favicon.ico',

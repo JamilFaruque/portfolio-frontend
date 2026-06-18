@@ -156,7 +156,7 @@ export default function Portfolio() {
               <div className="relative w-full h-full bg-slate-800 rounded-[3rem] overflow-hidden border border-slate-700 shadow-2xl">
                 <img 
                   src="https://picsum.photos/id/64/600/600" 
-                  alt="Rakibul Islam" 
+                  alt="Omar Faruk Jamil" 
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/90 to-transparent"></div>
@@ -425,7 +425,7 @@ export default function Portfolio() {
           </div>
           
           <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} Rakibul Islam. Crafted with ❤️ and Next.js in Dhaka.
+            © {new Date().getFullYear()} Omar Faruk Jamil. Crafted with ❤️ in Dhaka.
           </p>
         </div>
       </footer>
