@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.rdrCalendarWrapper {
+  /* font-size: 16px !important; */
+  position: relative !important;
+  font-family: var(--font-poppins) !important;
+  /* max-width: 650px !important; */
+  padding: 20px !important;
+  border-radius: 22px;
+  box-shadow:  0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px -1px rgba(0, 0, 0, .1);
+}
+.rdrMonthAndYearPickers, .rdrDateDisplayWrapper {
+  display: none!important;
+}
+.rdrMonthName {
+  text-align: center!important;
+}
+.rdrPprevButton {
+  background: transparent !important;
+  background-image: url('/images/chevronLeft.svg') !important;
+  background-size: cover !important;
+  position: absolute !important;
+  margin: 0 !important;
+}
+.rdrNextButton {
+  background: transparent !important;
+  background-image: url('/images/chevronRight.svg') !important;
+  background-size: cover !important;
+  position: absolute !important;
+  margin: 0 !important;
+  right: 0;
+}
+.rdrPprevButton i, .rdrNextButton i {
+  display: none !important;
+}
+
+.rdrMonthAndYearWrapper {
+  position: absolute !important;
+  width: 100% !important;
+  max-width: 650px !important;
+}
