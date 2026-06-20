@@ -39,10 +39,10 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center gap-4">
-          <a href="https://github.com" target="_blank" className="text-slate-400 hover:text-white transition-colors">
+          <a href="https://github.com/JamilFaruque" target="_blank" className="text-slate-400 hover:text-white transition-colors">
             <Github size={20} />
           </a>
-          <a href="https://linkedin.com" target="_blank" className="text-slate-400 hover:text-white transition-colors">
+          <a href="https://www.linkedin.com/in/jamilfaruk/" target="_blank" className="text-slate-400 hover:text-white transition-colors">
             <Linkedin size={20} />
           </a>
           <a href="#contact" className="px-6 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-full font-medium transition-all">

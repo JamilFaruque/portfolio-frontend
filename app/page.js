@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Navbar from '../components/Navbar';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue } from 'framer-motion';
 import { ArrowRight, Download, Github, ExternalLink, Code, Database, Globe, Linkedin, Mail } from 'lucide-react';
 
 export default function Portfolio() {
@@ -11,6 +11,9 @@ export default function Portfolio() {
     email: '',
     message: ''
   });
+
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -88,12 +91,51 @@ export default function Portfolio() {
     }
   ];
 
+  const [isGlowingActive, setGlowingActive] = useState(false);
+
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-20 min-h-[100dvh] flex items-center relative bg-[radial-gradient(at_50%_30%,rgba(16,185,129,0.15),transparent)]">
+      <section
+        onMouseEnter={(e) => setGlowingActive(true)}
+        onMouseLeave={(e) => setGlowingActive(false)}
+        className="pt-24 pb-20 min-h-[100dvh] flex items-center relative bg-[radial-gradient(at_50%_30%,rgba(16,185,129,0.15),transparent)]"
+        onMouseMove={(e) => {
+          const rect = e.currentTarget.getBoundingClientRect();
+
+          mouseX.set(e.clientX - rect.left);
+          mouseY.set(e.clientY - rect.top);
+        }}
+      >
+        {/* Grid */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)
+            `,
+            backgroundSize: "40px 40px",
+          }}
+        />
+        {/* Mouse Glow */}
+        {isGlowingActive && (
+          <motion.div
+            className="absolute w-96 h-96 rounded-full pointer-events-none"
+            style={{
+              left: mouseX,
+              top: mouseY,
+              x: "-50%",
+              y: "-50%",
+              background:
+                "radial-gradient(circle, rgba(0,150,255,0.25) 0%, transparent 20%)",
+              transform: "translate(-100%, -100%)",
+              pointerEvents: "none",
+            }}
+          />
+        )}
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
@@ -296,9 +338,9 @@ export default function Portfolio() {
                     <a href={project.link} target="_blank" className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-white text-black rounded-2xl hover:bg-slate-100 font-medium">
                       Live Demo <ExternalLink size={16} />
                     </a>
-                    <a href={project.github} target="_blank" className="flex-1 flex items-center justify-center gap-2 px-6 py-3 border border-slate-600 hover:border-white rounded-2xl transition-all">
+                    {/* <a href={project.github} target="_blank" className="flex-1 flex items-center justify-center gap-2 px-6 py-3 border border-slate-600 hover:border-white rounded-2xl transition-all">
                       Code <Github size={16} />
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </motion.div>
