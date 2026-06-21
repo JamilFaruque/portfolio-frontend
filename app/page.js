@@ -31,31 +31,55 @@ export default function Portfolio() {
 
   const skills = [
     { name: 'Laravel', icon: <Code />, level: 90 },
-    { name: 'React', icon: <Code />, level: 85 },
+    { name: 'React', icon: <Code />, level: 80 },
     { name: 'Next.js', icon: <Globe />, level: 80 },
-    { name: 'Vue.js', icon: <Code />, level: 75 },
-    { name: 'MySQL', icon: <Database />, level: 85 },
+    { name: 'Vue.js', icon: <Code />, level: 80 },
+    { name: 'MySQL', icon: <Database />, level: 70 },
     { name: 'Tailwind CSS', icon: <Code />, level: 90 },
-    { name: 'AI Integration', icon: <Code />, level: 70 },
-    { name: 'Node.js', icon: <Code />, level: 65 },
+    { name: 'AI Integration', icon: <Code />, level: 80 },
+    { name: 'Node.js', icon: <Code />, level: 60 },
   ];
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Full-featured online store built with Laravel and Vue.js. Includes payment integration, admin dashboard, and real-time inventory.",
+      title: "VIVIPINS(Backend)",
+      description: "Full-featured custom page builder system solving complexity of page creation and management",
       tech: ["Laravel", "Vue.js", "MySQL", "Tailwind"],
       link: "#",
       github: "#",
-      image: "https://picsum.photos/id/20/600/400" // placeholder
+      image: "/images/vivipins.png"
     },
     {
-      title: "AI-Powered Task Manager",
-      description: "Next.js application with AI suggestions for task prioritization and automated debugging using OpenAI APIs.",
-      tech: ["Next.js", "React", "Tailwind", "AI"],
+      title: "VIVIPINS(Frontend)",
+      description: "Designed responsive ui for custom page builder system",
+      tech: ["Next.js", "Tailwind"],
+      link: "https://vivipins.com/",
+      github: "#",
+      image: "/images/vivipins-frontend.png"
+    },
+    {
+      title: "Max Price Calculator(Backend)",
+      description: "RestAPI, Calculates mortgage prices based on user input & builds dynamic layout for frontend",
+      tech: ["Laravel", "Vue.js", "MySQL", "Bootstrap"],
+      link: "https://vivipins.com/",
+      github: "#",
+      image: "/images/max-price-backend.png"
+    },
+    {
+      title: "Max Price Calculator(Frontend)",
+      description: "A comprehensive ui for American mortgagors to calculate their payments",
+      tech: ["Next.js", "Tailwind"],
       link: "#",
       github: "#",
-      image: "https://picsum.photos/id/1015/600/400"
+      image: "/images/max-price-frontend.png"
+    },
+    {
+      title: "HandyCash Digital Loan",
+      description: "A multi-vendor CRM to manage multiple vendors, clients and their loans.",
+      tech: ["Laravel", "Vue.js", "MySQL", "Tailwind"],
+      link: "#",
+      github: "#",
+      image: "/images/easy-buy.png"
     },
     {
       title: "Healthcare Management System",
@@ -154,7 +178,7 @@ export default function Portfolio() {
             </h1>
             
             <p className="text-2xl text-slate-400 max-w-lg">
-              Full Stack Developer crafting exceptional digital experiences with Laravel, React &amp; Next.js
+              Full Stack Developer crafting exceptional digital experiences with Laravel, Vue.js &amp; Next.js
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -176,8 +200,8 @@ export default function Portfolio() {
 
             <div className="flex gap-8 pt-6 text-sm text-slate-400">
               <div>
-                <div className="text-4xl font-semibold text-white">15+</div>
-                Projects Completed
+                <div className="text-4xl font-semibold text-white">10+</div>
+                Projects
               </div>
               <div>
                 <div className="text-4xl font-semibold text-white">2+</div>
@@ -227,14 +251,14 @@ export default function Portfolio() {
             <div className="md:col-span-7 space-y-8 text-lg text-slate-300">
               <p>
                 Passionate full-stack developer based in Dhaka with a strong foundation in modern web technologies. 
-                I specialize in building scalable web applications and have hands-on experience with Laravel, React, Next.js, and database management.
+                I specialize in building scalable web applications and have hands-on experience with Laravel,Vue, React, Next.js, and database.
               </p>
               <p>
                 Currently focusing on AI-assisted development to accelerate project delivery and improve code quality. 
                 I thrive in collaborative environments and enjoy solving complex problems with elegant solutions.
               </p>
               <p>
-                When I&apos;m not coding, you can find me exploring new tech trends, contributing to open source, or enjoying a cup of cha in the bustling streets of Dhaka.
+                When I&apos;m not coding, you will find me travelling a lot.Exploring new places, people and cultures is my passion.
               </p>
             </div>
             
@@ -247,7 +271,7 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <div className="text-emerald-400 text-sm mb-1">EDUCATION</div>
-                    <div>B.Sc. Computer Science • University of Dhaka (Expected 2026)</div>
+                    <div>Bachelor in English • National University</div>
                   </div>
                   <div>
                     <div className="text-emerald-400 text-sm mb-1">LANGUAGES</div>
@@ -277,7 +301,7 @@ export default function Portfolio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="glass p-8 rounded-3xl group hover:border-cyan-500/30 border border-transparent"
+                className="glass p-6 rounded-3xl group hover:border-cyan-500/30 border border-transparent"
               >
                 <div className="text-4xl text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
                   {skill.icon}
@@ -319,19 +343,21 @@ export default function Portfolio() {
                   <img 
                     src={project.image} 
                     alt={project.title} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                    className="w-full h-full group-hover:scale-110 transition-transform duration-700" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
                 </div>
                 
-                <div className="p-8">
-                  <h3 className="text-2xl font-semibold mb-3">{project.title}</h3>
-                  <p className="text-slate-400 mb-6 line-clamp-3">{project.description}</p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {project.tech.map((t, i) => (
-                      <span key={i} className="text-xs px-3 py-1 bg-slate-800 text-slate-400 rounded-full">{t}</span>
-                    ))}
+                <div className="p-8 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-2xl font-semibold mb-3">{project.title}</h3>
+                    <p className="text-slate-400 mb-6 line-clamp-3">{project.description}</p>
+                    
+                    <div className="flex flex-wrap gap-2 mb-8">
+                      {project.tech.map((t, i) => (
+                        <span key={i} className="text-xs px-3 py-1 bg-slate-800 text-slate-400 rounded-full">{t}</span>
+                      ))}
+                    </div>
                   </div>
                   
                   <div className="flex gap-4">

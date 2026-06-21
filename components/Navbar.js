@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Navbar() {
@@ -45,8 +45,12 @@ export default function Navbar() {
           <a href="https://www.linkedin.com/in/jamilfaruk/" target="_blank" className="text-slate-400 hover:text-white transition-colors">
             <Linkedin size={20} />
           </a>
-          <a href="#contact" className="px-6 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-full font-medium transition-all">
-            Hire Me
+          <a 
+            href="/files/resume.pdf"
+            target="_blank"
+            className="px-6 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-full font-medium transition-all flex items-center gap-2"
+          >
+            Resume <ArrowDown size={16} />
           </a>
         </div>
 
