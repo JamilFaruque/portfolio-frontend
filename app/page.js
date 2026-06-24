@@ -82,12 +82,12 @@ export default function Portfolio() {
       image: "/images/easy-buy.png"
     },
     {
-      title: "Healthcare Management System",
-      description: "Comprehensive system for clinics using Laravel, React, and MySQL. Features patient records, appointment scheduling.",
-      tech: ["Laravel", "React", "MySQL"],
+      title: "Agro Farm Management System",
+      description: "Full-fleged app to monitor farm activities. Role based financial audit module included.",
+      tech: ["Laravel", "Vue.js", "MySQL", 'Bootstrap'],
       link: "#",
       github: "#",
-      image: "https://picsum.photos/id/106/600/400"
+      image: "/images/true-farmers-agro.png"
     },
   ];
 
@@ -135,7 +135,7 @@ export default function Portfolio() {
       >
         {/* Grid */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 z-[-99]"
           style={{
             backgroundImage: `
               linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
@@ -155,7 +155,6 @@ export default function Portfolio() {
               y: "-50%",
               background:
                 "radial-gradient(circle, rgba(0,150,255,0.25) 0%, transparent 20%)",
-              transform: "translate(-100%, -100%)",
               pointerEvents: "none",
             }}
           />
@@ -217,12 +216,12 @@ export default function Portfolio() {
             transition={{ duration: 1 }}
             className="relative flex justify-center"
           >
-            <div className="relative w-80 h-80 md:w-[420px] md:h-[420px]">
+            <div className="relative w-80 h-80 md:w-[380px] md:h-[380px]">
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-emerald-500/20 rounded-[4rem] rotate-6"></div>
               <div className="relative w-full h-full bg-slate-800 rounded-[3rem] overflow-hidden border border-slate-700 shadow-2xl">
                 <img 
-                  src="https://picsum.photos/id/64/600/600" 
-                  alt="Omar Faruk Jamil" 
+                  src="/images/myself.png" 
+                  alt="Jamil" 
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/90 to-transparent"></div>
