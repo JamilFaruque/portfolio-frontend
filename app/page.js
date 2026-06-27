@@ -40,12 +40,30 @@ export default function Portfolio() {
     { name: 'Node.js', icon: <Code />, level: 60 },
   ];
 
+  const certifications = [
+    {
+      name: 'Introduction to JavaScript',
+      image: '/images/sololearn-certification.jpg',
+      link: 'https://www.sololearn.com/Certificate/CC-C3NGTQRR/pdf'
+    },
+    {
+      name: 'FreeCodeCamp: JavaScript Algorithms and Data Structures',
+      image: '/images/fcc.png',
+      link: 'https://www.freecodecamp.org/certification/jamilfaruk/javascript-algorithms-and-data-structures'
+    },
+    {
+      name: 'JavaScript Intermediate',
+      image: '/images/js-intermediate.jpg',
+      link: 'https://www.sololearn.com/Certificate/CC-NJKCGBIP/pdf'
+    }
+  ]
+
   const projects = [
     {
       title: "VIVIPINS(Backend)",
       description: "Full-featured custom page builder system solving complexity of page creation and management",
       tech: ["Laravel", "Vue.js", "MySQL", "Tailwind"],
-      link: "#",
+      link: "https://portal.vivipins.com",
       github: "#",
       image: "/images/vivipins.png"
     },
@@ -89,28 +107,52 @@ export default function Portfolio() {
       github: "#",
       image: "/images/true-farmers-agro.png"
     },
+    {
+      title: "NextPins",
+      description: "E-commerce platform for US consumers to buy and sell digital pins",
+      tech: ["Next.js", 'Tailwind'],
+      link: "https://nextpins.com/",
+      github: "#",
+      image: "/images/nextpins.png"
+    },
+    {
+      title: "SockPrinter",
+      description: "Custom socks printing platform for US consumers",
+      tech: ["Next.js", 'Tailwind'],
+      link: "https://sockprinter.com/",
+      github: "#",
+      image: "/images/sockprinter.png"
+    },
+    {
+      title: "EquipMeds",
+      description: "An e-commerce platform for medical equipments",
+      tech: ["Next.js", 'Tailwind'],
+      link: "https://equipmeds.com/",
+      github: "#",
+      image: "/images/equipmeds.png"
+    },
   ];
 
   const experiences = [
     {
-      role: "Junior Full Stack Developer",
-      company: "Tech Solutions BD",
-      period: "2023 - Present",
-      description: "Working on enterprise web applications with senior team. Implementing AI tools to accelerate development cycles.",
+      role: "In-House Developer",
+      company: "HandyCash Home Credit Ltd.",
+      period: "2025 - Present",
+      description: "Worked as a full-stack developer for the Scottish fintech company. Built web applications to run businesses. Delivering high-quality code and user-friendly interfaces.",
       achievements: [
-        "Developed 5+ production-ready features",
-        "Optimized database queries improving performance by 40%",
-        "Integrated AI debugging assistant"
+        "Developed 3 production-ready web applications",
+        "Optimized frontend performance with Vue.js and Tailwind CSS",
       ]
     },
     {
-      role: "Freelance Web Developer",
+      role: "Freelance Full-Stack Web Developer",
       company: "Self Employed",
-      period: "2022 - 2023",
-      description: "Built multiple client projects using modern tech stacks.",
+      period: "2023 - Present",
+      description: "Working on enterprise web applications with senior engineers.",
       achievements: [
-        "Delivered 12 projects on time",
-        "Client satisfaction rate 98%"
+        "Developed backend systems and frontend interfaces",
+        "Implemented lots of features on time",
+        "Optimized Database performance & loading time",
       ]
     }
   ];
@@ -266,7 +308,7 @@ export default function Portfolio() {
                 <div className="space-y-6">
                   <div>
                     <div className="text-emerald-400 text-sm mb-1">CURRENT FOCUS</div>
-                    <div className="font-semibold">AI-Driven Development Workflows</div>
+                    <div className="font-semibold">AI integration & AI-Driven Development Workflows</div>
                   </div>
                   <div>
                     <div className="text-emerald-400 text-sm mb-1">EDUCATION</div>
@@ -416,6 +458,41 @@ export default function Portfolio() {
                       ))}
                     </ul>
                   </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      
+      {/* Certifications Section */}
+      <section id="certifications" className="py-24 bg-slate-950">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="text-cyan-400 font-mono text-sm tracking-[4px] mb-3">CHAPTER 05</div>
+            <h2 className="text-5xl font-bold mb-4">Certifications</h2>
+            <p className="text-slate-400">Certificates that I have acquired online</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {certifications.map((certificate, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="project-card group bg-slate-900/70 border border-slate-700 rounded-3xl overflow-hidden"
+              >
+                <div className="relative h-56 overflow-hidden">
+                  <a href={certificate.link} target="_blank" className="absolute inset-0 z-30"></a>
+                  <img 
+                    src={certificate.image} 
+                    alt={certificate.title} 
+                    className="w-full h-full group-hover:scale-110 transition-transform duration-700" 
+                  />
+                  {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div> */}
                 </div>
               </motion.div>
             ))}
