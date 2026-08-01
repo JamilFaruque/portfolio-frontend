@@ -11,6 +11,7 @@ export default function Portfolio() {
     email: '',
     message: ''
   });
+  const [expandedDescriptions, setExpandedDescriptions] = useState([]);
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -28,6 +29,16 @@ export default function Portfolio() {
     alert('Thank you! Your message has been received. I will get back to you soon.');
     setFormData({ name: '', email: '', message: '' });
   };
+
+  const handleExpandDescription = (index) => {
+    setExpandedDescriptions((prev) => {
+      if (prev.includes(index)) {
+        return prev.filter((i) => i !== index);
+      } else {
+        return [...prev, index];
+      }
+    });
+  }
 
   const skills = [
     { name: 'Laravel', icon: <Code />, level: 90 },
@@ -69,7 +80,7 @@ export default function Portfolio() {
     },
     {
       title: "VIVIPINS(Frontend)",
-      description: "Designed responsive ui for custom page builder system",
+      description: "Responsive UI's for the VIVIPINS e-commerce platform",
       tech: ["Next.js", "Tailwind"],
       link: "https://vivipins.com/",
       github: "#",
@@ -79,13 +90,13 @@ export default function Portfolio() {
       title: "Max Price Calculator(Backend)",
       description: "RestAPI, Calculates mortgage prices based on user input & builds dynamic layout for frontend",
       tech: ["Laravel", "Vue.js", "MySQL", "Bootstrap"],
-      link: "https://vivipins.com/",
+      link: "#",
       github: "#",
       image: "/images/max-price-backend.png"
     },
     {
       title: "Max Price Calculator(Frontend)",
-      description: "A comprehensive ui for American mortgagors to calculate their payments",
+      description: "A comprehensive UI for American mortgagors to calculate their payments based on their input.",
       tech: ["Next.js", "Tailwind"],
       link: "#",
       github: "#",
@@ -140,7 +151,8 @@ export default function Portfolio() {
       period: "2025 - Present",
       description: "Worked as a full-stack developer for the Scottish fintech company. Built web applications to run businesses. Delivering high-quality code and user-friendly interfaces.",
       achievements: [
-        "Developed 3 production-ready web applications",
+        "Maintaining 3 production-ready web applications",
+        "Continuously integrating new features and improving existing ones",
         "Optimized frontend performance with Vue.js and Tailwind CSS",
       ]
     },
@@ -392,7 +404,12 @@ export default function Portfolio() {
                 <div className="p-8 flex-1 flex flex-col justify-between">
                   <div>
                     <h3 className="text-2xl font-semibold mb-3">{project.title}</h3>
-                    <p className="text-slate-400 mb-6 line-clamp-3">{project.description}</p>
+                    <p
+                      onClick={() => handleExpandDescription(index)}
+                      className={`text-slate-400 cursor-pointer mb-6 ${expandedDescriptions.includes(index) ? '' : 'line-clamp-3'}`}
+                    >
+                      {project.description}
+                    </p>
                     
                     <div className="flex flex-wrap gap-2 mb-8">
                       {project.tech.map((t, i) => (
